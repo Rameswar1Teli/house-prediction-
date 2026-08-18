@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>House Price Predictor</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="container">
+
+<h1>🏠 House Price Prediction</h1>
+
+<p>Predict Boston House Prices using Machine Learning</p>
+
+<form action="{{ url_for('get_values') }}" method="POST">
+
+<div class="input-box">
+
+<i class="fa-solid fa-house"></i>
+
+<input
+type="number"
+step="any"
+name="rm"
+placeholder="Average Rooms"
+required>
+
+</div>
+
+<div class="input-box">
+
+<i class="fa-solid fa-user-graduate"></i>
+
+<input
+type="number"
+step="any"
+name="pt"
+placeholder="Pupil Teacher Ratio"
+required>
+
+</div>
+
+<div class="input-box">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<input
+type="number"
+step="any"
+name="lstat"
+placeholder="Lower Status %"
+required>
+
+</div>
+
+<button type="submit">
+
+Predict Price
+
+</button>
+    <div class="footer-text">
+    Based on the Boston Housing Dataset and a linear regression model.
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+<script src="{{ url_for('static',filename='script.js') }}"></script>
+
+</body>
+</html>
